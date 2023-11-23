@@ -1,17 +1,16 @@
 
 #' Create an account for using Techtonique APIs
 #'
-#' @param base_url a string; where the API is located
 #' @param username a string; your username
 #' @param password a string; your password
 #'
 #' @return
 #' @export
 #'
-#' @examples
-create_account <- function(base_url = "https://techtonique2.herokuapp.com",
-                           username, password)
+create_account <- function(username, password)
 {
+  base_url <- "https://techtonique2.herokuapp.com"
+
   if (is.character(username) == FALSE)
     stop("'username' must be a string")
 
@@ -29,19 +28,7 @@ create_account <- function(base_url = "https://techtonique2.herokuapp.com",
                     config = httr::add_headers(.headers=headers),
                     body = data)
 
+  print(res)
+
   return(res)
-  }
-
-
-# require(httr)
-#
-# headers = c(
-#   `Content-Type` = 'application/json'
-# )
-#
-# data = '{"username":"tester_r@example.com","password":"pwd"}'
-#
-# res <- httr::POST(url = 'https://techtonique2.herokuapp.com/api/users',
-#                   httr::add_headers(.headers=headers), body = data)
-#
-# print(res)
+}
