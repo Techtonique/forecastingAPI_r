@@ -1,3 +1,3 @@
-# `forecastingapi` (R version)
+# forecastingAPI
 
-see [README](../README.md)
+High level R functions for interacting with Techtonique forecasting API
