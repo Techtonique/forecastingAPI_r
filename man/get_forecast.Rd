@@ -5,37 +5,30 @@
 \title{Obtain forecasts from a csv file}
 \usage{
 get_forecast(
-  file,
-  token,
-  method = c("theta", "mean", "rw", "prophet"),
-  h = 5,
-  level = 95,
-  date_formatting = "original",
-  start_training = NULL,
-  n_training = NULL
+  path_to_file,
+  base_model = "RidgeCV",
+  n_hidden_features = 5L,
+  lags = 25L,
+  type_pi = "gaussian",
+  replications = NULL,
+  h = 10L
 )
 }
 \arguments{
-\item{file}{a string; path to csv file containing time series data (examples:
+\item{path_to_file}{a string; path to csv file containing time series data (examples:
 https://github.com/Techtonique/datasets/tree/main/time_series/univariate)}
 
-\item{token}{a string; authentication token (obtained with \code{forecastingAPI::get_token})}
+\item{base_model}{a string; Forecasting method to use (default is "RidgeCV"); for now scikit-learn model names.}
 
-\item{method}{a string; forecasting method (currently Theta, mean forecast, Random walk forecasting,
-and FB Prophet forecasting)}
+\item{n_hidden_features}{an integer; Number of hidden features for the model (default is 5).}
 
-\item{h}{an integer; number of periods for forecasting}
+\item{lags}{an integer; Number of lags to use in the model (default is 25).}
 
-\item{level}{an integer; confidence levels for prediction intervals}
+\item{type_pi}{a string; Type of prediction interval to use (default is 'gaussian').}
 
-\item{date_formatting}{a string; either "original" (yyyy-mm-dd) or "ms" (milliseconds)}
+\item{replications}{an integer; Number of replications for certain methods (default is None).}
 
-\item{start_training}{an integer; starting index for training window}
-
-\item{n_training}{an integer; length of training window}
-}
-\value{
-a list of "averages" (mean forecast) and "ranges" (lower and upper bounds of prediction interval)
+\item{h}{an integer; Forecast horizon (default is 10).}
 }
 \description{
 Obtain forecasts from a csv file
