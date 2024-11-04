@@ -5,8 +5,8 @@ High level R functions for interacting with [Techtonique forecasting API](https:
 
 ## Installation
 
-```bash
-pip install forecastingapi
+```R
+remotes::install_github("Techtonique/forecastingAPI_r")
 ```
 
 ## Usage 
@@ -14,10 +14,6 @@ pip install forecastingapi
 - File examples: [https://github.com/Techtonique/datasets/tree/main/time_series](https://github.com/Techtonique/datasets/tree/main/time_series)
 - Get a token: [https://www.techtonique.net/token](https://www.techtonique.net/token)
 
-
-```R
-remotes::install_github("Techtonique/forecastingAPI_r")
-```
 
 ```R
 library(forecastingapi)
