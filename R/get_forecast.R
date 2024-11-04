@@ -36,7 +36,7 @@ get_forecast <- function(path_to_file,
   }
 
   files = list(
-    `file` = httr::upload_file(path_to_file)
+    file = httr::upload_file(path_to_file)
   )
 
 headers = c(
